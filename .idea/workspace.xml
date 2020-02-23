@@ -55,6 +55,7 @@
     <session id="-41782909">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -104,8 +105,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="819" />
-    <option name="y" value="100" />
+    <option name="x" value="523" />
+    <option name="y" value="112" />
     <option name="width" value="1326" />
     <option name="height" value="916" />
   </component>
@@ -136,7 +137,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/test" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -173,15 +174,15 @@
       <option name="presentableId" value="Default" />
       <updated>1582404666688</updated>
       <workItem from="1582404668006" duration="7020000" />
-      <workItem from="1582467842492" duration="2259000" />
+      <workItem from="1582467842492" duration="4588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9279000" />
+    <option name="totallyTimeSpent" value="11608000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="819" y="100" width="1326" height="916" extended-state="0" />
+    <frame x="523" y="112" width="1326" height="916" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1943128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
