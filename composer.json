@@ -1,0 +1,29 @@
+{
+    "name": "269995848/qqrobot",
+    "description": "qqrobot for php library",
+    "type": "library",
+    "keywords": [
+        "qqrobot"
+    ],
+    "homepage": "https://github.com/269995848/qqrobot",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "solo",
+            "email": "269995848@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "qqRobot\\": "src/"
+        }
+    },
+
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev"
+}
