@@ -1,29 +1,34 @@
 {
-    "name": "269995848/qqrobot",
-    "description": "qqrobot for php library",
-    "type": "library",
+    "name": "topthink/think",
+    "description": "the new thinkphp framework",
+    "type": "project",
     "keywords": [
-        "qqrobot"
+        "framework",
+        "thinkphp",
+        "ORM"
     ],
-    "homepage": "https://github.com/269995848/qqrobot",
+    "homepage": "http://thinkphp.cn/",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "solo",
-            "email": "269995848@qq.com"
+            "name": "liu21st",
+            "email": "liu21st@gmail.com"
         }
     ],
     "require": {
-        "php": ">=5.6.0"
+        "php": ">=5.4.0",
+        "topthink/framework": "5.0.*",
+        "269995848/qqrobot": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "qqRobot\\": "src/"
+            "app\\": "application"
         }
     },
-
+    "extra": {
+        "think-path": "thinkphp"
+    },
     "config": {
         "preferred-install": "dist"
-    },
-    "minimum-stability": "dev"
+    }
 }
