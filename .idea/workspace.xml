@@ -104,8 +104,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="661" />
-    <option name="y" value="159" />
+    <option name="x" value="664" />
+    <option name="y" value="95" />
     <option name="width" value="1326" />
     <option name="height" value="916" />
   </component>
@@ -119,18 +119,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="testPhpFrame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testPhpFrame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testPhpFrame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testPhpFrame" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testPhpFrame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testPhpFrame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="qqRobot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qqRobot" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -183,15 +173,15 @@
       <option name="presentableId" value="Default" />
       <updated>1582404666688</updated>
       <workItem from="1582404668006" duration="7020000" />
-      <workItem from="1582467842492" duration="1120000" />
+      <workItem from="1582467842492" duration="1977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8140000" />
+    <option name="totallyTimeSpent" value="8997000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="661" y="159" width="1326" height="916" extended-state="0" />
+    <frame x="664" y="95" width="1326" height="916" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1943128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
