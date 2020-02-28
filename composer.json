@@ -1,5 +1,5 @@
 {
-    "name": "269995848/qq-robot",
+    "name": "269995848/QQRobot",
     "description": "php library for qq",
     "type": "library",
     "keywords": [
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "QqRobot\\": "src"
+            "QQRobot\\": "src"
         }
     }
 
