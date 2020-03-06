@@ -13,6 +13,7 @@
             "name": "SoLo",
             "email": "269995848@qq.com"
         }
+
     ],
     "require": {
         "php": ">=5.4.0"
@@ -20,8 +21,11 @@
     },
     "autoload": {
         "psr-4": {
-            "QQRobot\\": "src"
-        }
+            "QQRobot\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
     }
 
 }
