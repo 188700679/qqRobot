@@ -131,11 +131,13 @@ $load->loader();
 
 #### 主动发送消息
 
+> 主动发送消息事件,不依赖当前server实例
+
 ~~~
 use QQRobot\Client;
 
 
-$client=new Client($response);
+$client=new Client();
 $client->on('msg',function(){
     return
         ['msg'=>'你从哪里来?',  //(必填)
