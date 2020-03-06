@@ -21,7 +21,7 @@ composer require 269995848/qqrobot dev-master
 
 2.消息代理
 
-3.发送图片,文字,音频
+3.发送图片,文字
 
 4.发送音频
 
