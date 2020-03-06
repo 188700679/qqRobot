@@ -64,6 +64,7 @@
     <session id="1649072247">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -82,27 +83,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
               <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TestClass.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/src/Cookie/CookieJar.php">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -128,8 +115,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="523" />
-    <option name="y" value="112" />
+    <option name="x" value="266" />
+    <option name="y" value="133" />
     <option name="width" value="1326" />
     <option name="height" value="916" />
   </component>
@@ -151,19 +138,6 @@
               <item name="qqRobot" type="b2602c69:ProjectViewProjectNode" />
               <item name="qqRobot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qqRobot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qqRobot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qqRobot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qqRobot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Cookie" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -217,15 +191,15 @@
       <updated>1582404666688</updated>
       <workItem from="1582404668006" duration="7020000" />
       <workItem from="1582467842492" duration="4588000" />
-      <workItem from="1583050093155" duration="294000" />
+      <workItem from="1583050093155" duration="948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11902000" />
+    <option name="totallyTimeSpent" value="12556000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="523" y="112" width="1326" height="916" extended-state="0" />
+    <frame x="266" y="133" width="1326" height="916" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19747235" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -260,13 +234,6 @@
     <entry file="file://$PROJECT_DIR$/lib/loader.php" />
     <entry file="file://$PROJECT_DIR$/public/index.php" />
     <entry file="file://$PROJECT_DIR$/src/command/Help.php" />
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestClass.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -279,6 +246,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/Cookie/CookieJar.php">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

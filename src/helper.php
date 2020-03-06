@@ -5,14 +5,11 @@
  * Ps:
  */
 
-namespace QQRobot;
 
+use QQRobot\Server;
+const VERSION='1.0';
 
-class Helper{
-
-    public const VERSION='1.0';
-
-    public static function debug_resource($value=null){
+    function debug_resource($value=null){
         if(is_resource($value)){
             return $value;
         }else if(defined('STDOUT')){
@@ -22,11 +19,11 @@ class Helper{
         return fopen('php://output','w');
     }
 
-    public static function default_user_agent(){
+    function default_user_agent(){
         static $defaultAgent='';
 
         if(!$defaultAgent){
-            $defaultAgent='QQRobot/'.self::VERSION;
+            $defaultAgent='QQRobot/'.VERSION;
             if(extension_loaded('curl') && function_exists('curl_version')){
                 $defaultAgent.=' curl/'.\curl_version()['version'];
             }
@@ -37,7 +34,19 @@ class Helper{
     }
 
 
-    public static function default_ca_bundle(){
+    function commonLog($filename='',$content=null){
+
+        if(!$content)return false;
+        $filename?:$filename="/qqrobot.log";
+        $hr="\r========================================\r";
+        $path=__DIR__.$filename;
+        file_put_contents($path,$hr,FILE_APPEND);
+        file_put_contents($path,var_export($content,true),FILE_APPEND);
+        file_put_contents($path,$hr,FILE_APPEND);
+    }
+
+
+    function default_ca_bundle(){
         static $cached=null;
         static $cafiles=[
             // Red Hat, CentOS, Fedora (provided by the ca-certificates package)
@@ -81,8 +90,15 @@ EOT
         );
     }
 
+    function setConfig($arr){
+        if(is_array($arr)){
+            return (object) array_map(__FUNCTION__, $arr);
+        }
+        return $arr;
+    }
 
-    public static function normalize_header_keys(array $headers){
+
+   function normalize_header_keys(array $headers){
         $result=[];
         foreach(array_keys($headers) as $key){
             $result[strtolower($key)]=$key;
@@ -90,4 +106,3 @@ EOT
 
         return $result;
     }
-}

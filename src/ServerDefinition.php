@@ -1,23 +1,23 @@
 <?php
 /**
  * User: 木鱼
- * Date: 2020/3/1 3:49
+ * Date: 2020/3/4 6:04
  * Ps:
  */
 
 namespace QQRobot;
 
 
-abstract class Event{
+use QQRobot\exception\BadResponseException;
 
+abstract class ServerDefinition implements EventInterface{
 
     /**
      * @var 响应
      */
     public $accept;
 
-
-
+    public $listen;
 
 
     /**
@@ -27,8 +27,6 @@ abstract class Event{
     public function data(){
         return $this->dataHandle();
     }
-
-
 
 
     /**
@@ -41,21 +39,20 @@ abstract class Event{
     }
 
 
-
-
     /**
      * @return mixed
      * user:木鱼  2019/12/25 2:20
      */
     public  function response(){
-         return $this->accept=$this->accept();
+        return $this->accept=$this->accept();
+
     }
 
 
 
 
-    public function isListen($listen){
-        $this->listen=$listen;
+    public function isListen(){
+        return $this->listen;
     }
 
 
@@ -75,7 +72,7 @@ abstract class Event{
      * user:木鱼  2019/12/22 5:59
      * 监听代理
      */
-    abstract protected function listen();
+    abstract protected function setListen();
 
 
     /**
