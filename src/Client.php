@@ -210,7 +210,10 @@ class Client extends ClientDefinition{
      */
     public function messageSender($args){
         if(!empty($args)){
-            $msgSender=new MessageSender($this->server->config->host);
+            if($host=$this->server->host){
+                $host=$this->server->config->host;
+            }
+            $msgSender=new MessageSender($host);
             if(!$this->proxy){
                 return false;
             }
