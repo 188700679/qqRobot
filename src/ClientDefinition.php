@@ -10,27 +10,42 @@ namespace QQRobot;
 
 abstract class ClientDefinition implements SendInterface,EventInterface{
 
-    public $accept;
 
 
 
-    public $receive;
-
-
-
-
-    public function send($args) { // 调用基本方法组装顶层逻辑
+    /**
+     * @param $args
+     * @return mixed
+     * user:木鱼  2020/3/7 10:37
+     *
+     * Calling basic methods to assemble top level logic
+     */
+    public function send($args) {
 
         return $this->messageSender($args);
     }
 
-
+    /**
+     * @return mixed
+     * user:木鱼  2020/3/7 10:38
+     * Parsing all incoming parameters,He relies on client example
+     */
     public function msgParse(){
         return $this->parseIt();
     }
 
+    /**
+     * @param $args
+     * @return mixed
+     * user:木鱼  2020/3/7 10:45
+     */
     abstract protected function messageSender($args);
 
+
+    /**
+     * @return mixed
+     * user:木鱼  2020/3/7 10:46
+     */
     abstract public function parseIt();
 
 
