@@ -167,6 +167,38 @@ $client->on('msg',function(){
 });
 ~~~
 
+#### 群发
+
+~~~
+ public function time(){
+        $client=new Client($this->config);
+        $msg="消息群发啦";
+
+        $qun=['xxxx','xxxx','xxxx'];
+        $emoji=rand(128512,128588);;
+        $arr=[
+            'msg'=>$msg,
+            'emoji'=>$emoji,
+            'group'=>'true',
+            'qq'=>'',
+            'img'=>'qqrobot_detail.png'
+        ];
+
+        $msg=[];
+
+        foreach($qun as $v){
+            $arr['qq']=$v;
+            $msg[]=$arr;
+        }
+
+        $client->on('msg',function()use($msg){
+            return $msg;
+        });
+
+    }
+
+~~~
+
 > server实例应在你的项目入口处调用,比如tp5默认是index/index/index
 
 
