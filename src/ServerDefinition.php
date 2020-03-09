@@ -12,10 +12,7 @@ use QQRobot\exception\BadResponseException;
 
 abstract class ServerDefinition implements EventInterface{
 
-    /**
-     * @var 响应
-     */
-    public $accept;
+
 
     public $listen;
 
@@ -45,7 +42,6 @@ abstract class ServerDefinition implements EventInterface{
      */
     public  function response(){
         return $this->accept=$this->accept();
-
     }
 
 

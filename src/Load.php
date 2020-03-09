@@ -41,6 +41,7 @@ class Load implements EventObservable{
     public function loader()
     {
 
+
         foreach($this->_obs as $obs){
             $obs->init($this->event,$this);
         }

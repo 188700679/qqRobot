@@ -16,7 +16,8 @@ use QQRobot\QQRobotConst;
 
 class Back implements TypeFactory{
 
-    public static function typeHandle($param,$server){
+    public static function typeHandle($param,$server):?string {
+
         $msg='';
         try{
             if(isset($param['at'])){
@@ -37,19 +38,17 @@ class Back implements TypeFactory{
 
 
         if($param['img']){
-            if(!file_exists($param['img'])){
-                throw new FileNotFindException($param['img']);
-            }
+//            if(!file_exists($param['img'])){
+//                throw new FileNotFindException($param['img']);
+//            }
 
             $msg.="\r".QCode::Image(basename($param['img']));
         }
 
 
-        return SendMessageEvent::sendBack($msg,$server);
+        return $msg;
 
     }
 
-    public static  function send(){
-        // TODO: Implement send() method.
-    }
+
 }

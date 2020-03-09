@@ -37,4 +37,9 @@ class ParamsWrongException extends TransferException{
         commonLog('','client实例里配置错误!');
         trigger_error('client实例里配置错误!',E_USER_DEPRECATED);
     }
+
+    public  function custom_error($str){
+        commonLog('',$str);
+        trigger_error($str,E_USER_DEPRECATED);
+    }
 }

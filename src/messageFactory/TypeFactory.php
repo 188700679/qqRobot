@@ -12,5 +12,5 @@ interface TypeFactory{
 
     public static function typeHandle($param,$server);
 
-    public static function send();
+
 }

@@ -14,6 +14,7 @@ class MessageSender{
     public $cq;
 
     public  function __construct($host){
+
         $this->cq=new CQA($host);
     }
 
@@ -22,19 +23,20 @@ class MessageSender{
      * @param  $message
      */
     public function sendOn($message){
+
         if($message->toGroup){
             if($message->async){
-                $this->cq->sendGroupMsgAsync($message->id, $message->msg);
+                return $this->cq->sendGroupMsgAsync($message->id, $message->msg);
             }else{
-                $this->cq->sendGroupMsg($message->id, $message->msg);
+                return $this->cq->sendGroupMsg($message->id, $message->msg);
             }
         }else{
-            if(isset($message->async) && $message->async){
 
-                $this->cq->sendPrivateMsgAsync($message->id, $message->msg);
+            if(isset($message->async) && $message->async){
+                return $this->cq->sendPrivateMsgAsync($message->id, $message->msg);
             }else{
 
-                $this->cq->sendPrivateMsg($message->id, $message->msg);
+                return $this->cq->sendPrivateMsg($message->id, $message->msg);
             }
         }
     }

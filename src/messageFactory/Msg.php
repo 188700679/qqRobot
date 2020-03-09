@@ -20,6 +20,7 @@ class Msg  implements TypeFactory{
 
     public static function typeHandle($param,$server){
 
+
         $msg='';
         try{
             if(isset($param['at'])){
@@ -29,19 +30,19 @@ class Msg  implements TypeFactory{
             $param['emoji']=isset($param['emoji'])?(int)($param['emoji']):'';
             $param['group']=isset($param['group'])?(bool)($param['group']):true;
             $param['qq']=isset($param['qq'])?(int)($param['qq']):0;
+            $param['at']=isset($param['at'])?(int)($param['at']):0;
 
             $param['img']=isset($param['img'])?(string)trim(($param['img'])):'';
 
+            if($param['at']){
+                $msg.=QCode::At($param['at']);
+            }
             $msg.=$param['msg'];
 
         }catch(\Throwable $e){
             throw (new ParamsWrongException())->errorClientConfig();
         }
-        if($param['at']){
-            $msg.=QCode::At($param['at']);
-        }
 
-        $msg.=$param['msg'];
         if($param['at'] && !$param['group']){
             throw (new ParamsWrongException())->errorAt();
         }
@@ -53,19 +54,16 @@ class Msg  implements TypeFactory{
         }
 
         if($param['img']){
-            if(!file_exists($param['img'])){
-                throw new FileNotFindException($param['img']);
-            }
+//            if(!file_exists($param['img'])){
+//                throw new FileNotFindException($param['img']);
+//            }
 
             $msg.="\r".QCode::Image(basename($param['img']));
         }
-
 
         return new MessageConstruct($msg,$param['qq'],$param['group']);
 
     }
 
-    public static  function send(){
-        // TODO: Implement send() method.
-    }
+
 }

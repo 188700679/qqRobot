@@ -18,5 +18,7 @@ interface Definition{
     public const send_discuss_msg_async = '/send_discuss_msg_async';
     public const send_msg = '/send_msg';
     public const send_msg_async = '/send_msg_async';
+    public const set_group_add_request = '/set_group_add_request';
+    public const get_group_info = '/_get_group_info';
 
 }

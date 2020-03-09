@@ -24,12 +24,13 @@ class Leave implements ResolutionObserver{
                 &&
                 ($event->notice_type==QQRobotConst::GROUP_DECREASE)){
                 $msg=<<<EOT
-群友.$event->user_id.离开了我们，祝它前程似锦,光明无限！
+群友 $event->user_id 离开了我们，祝它前程似锦,光明无限！
 EOT;
                 $client=new Client($event);
                 $client->on('back',function()use($msg){
+                    $emoji=rand(128512,128588);;
                     return
-                        ['msg'=>$msg,'emoji'=>'128552'];
+                        ['msg'=>$msg,'emoji'=>$emoji];
 
                 });
 

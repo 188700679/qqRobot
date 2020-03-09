@@ -52,7 +52,16 @@ class CQA implements Definition{
         return $this->query($api, $param);
     }
 
+    public function getGroupInfo($group_id){
+        $api = Definition::get_group_info;
+        $param = [
+            'group_id' => $group_id,
+        ];
+        return $this->query($api, $param);
+    }
+
     public function sendGroupMsgAsync($group_id, $message, $auto_escape = false){
+
         $api = Definition::send_group_msg_async."_rate_limited";
         $param = [
             'group_id' => $group_id,
@@ -70,8 +79,9 @@ class CQA implements Definition{
             $queryStr.= ($key.'='.urlencode(is_bool($value)?((int)$value):$value).'&');
         }
 
-
+        //halt('http://'.$this->host.$api.$queryStr);
         $result = json_decode(file_get_contents('http://'.$this->host.$api.$queryStr));
+
 
         switch($result->retcode){
             case 0:

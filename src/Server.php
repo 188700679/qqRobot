@@ -40,12 +40,11 @@ class Server extends ServerDefinition{
      */
     public $or;
 
-
-    public $host;
     /**
-     * @var 响应
+     * @var 监听地址
      */
-    public $accept;
+    public $host;
+
     /**
      * @var array 接受队列
      */
@@ -93,6 +92,16 @@ class Server extends ServerDefinition{
      */
     private $type;
 
+    private $response;
+
+
+
+    /**
+     * @var bool
+     * 未知放行
+     */
+    private $flag;
+
     public function __construct($config=[]){
 
         $this->type=[
@@ -104,9 +113,13 @@ class Server extends ServerDefinition{
         $this->configureDefaults($config);
     }
 
+    public function __set($name,$value){
+
+        $this->_destruct($value);
+        return $this->response;
+    }
 
     private function configureDefaults(array $config){
-
         $defaults=[
             'http_errors'   =>true,
             'decode_content'=>true,
@@ -114,7 +127,7 @@ class Server extends ServerDefinition{
             'cookies'       =>false,
             'httpOrS'       =>true,
             'proxyQQ'       =>'',
-            'host'          =>'192.168.1.7:5700',
+            'host'          =>'172.19.190.207:5700',
             'isLog'         =>true,
             'listenQQRobot' =>true,
             'token'         =>'',
@@ -147,13 +160,12 @@ class Server extends ServerDefinition{
         }
 
         $config=$config+$defaults;
+
         $config['request_time']=$_SERVER['REQUEST_TIME'];
 
         if(!empty($config['cookies']) && $config['cookies']===true){
             $config['cookies']=new CookieJar();
         }
-
-
 
         // 添加默认的代理投.
         if(!isset($config['headers'])){
@@ -168,11 +180,10 @@ class Server extends ServerDefinition{
             $config['headers']['User-Agent']=default_user_agent()();
         }
 
-
         //变更全局配置
         $this->config=setConfig($config);
-        $this->listenQQRobot!==null?$this->listenQQRobot:$this->listenQQRobot=$this->config->listenQQRobot;
 
+        $this->listenQQRobot!==null?$this->listenQQRobot:$this->listenQQRobot=$this->config->listenQQRobot;
 
     }
 
@@ -193,57 +204,64 @@ class Server extends ServerDefinition{
     /**
      * @return mixed|void
      * user:木鱼  2019/12/25 2:19
+     *
      */
     public function returnMessage(){}
 
 
 
     /**
-     * @return mixed|void
+     * @return mixed|
      * user:木鱼  2019/12/25 2:19
      */
     public function parseIt(){
-       if($this->accept->post_type!='message'){
+        if($this->flag){
+            return $this->response;
+        };
+       if($this->response->post_type!='message'){
            return null;
        }
-        $accept=$this->accept->message;
+
+        $accept=$this->response->message;
         if(preg_match('/\[CQ:at,qq=(\d+)\]/',$accept,$qq)){
             $accept=str_replace($qq[0],'',$accept);
-            $this->accept->message=$accept;
-            $this->accept->isAt=true;
-            $this->accept->atWho=$qq[1];
+            $this->response->message=trim($accept);
+            $this->response->isAt=true;
+            $this->response->atWho=$qq[1];
         }
 
     }
 
 
-    public function __destruct(){
+    public function _destruct($response){
+        $this->response=$response;
         if(!$this->listenQQRobot)return $this;
-        if(!$this->accept)throw new BadResponseException();
-
-        if(!isset($this->accept->post_type) || !in_array($this->accept->post_type,$this->type)){
-
-
-            return null;
+        if(!$this->response)throw new BadResponseException();
+        if(!isset($this->response->post_type) || !in_array($this->response->post_type,$this->type)){
+            if(!strpos(json_encode($this->response),'"status":"ok"')!==false){
+                return null;
+            }
+            $this->flag=true;
         }
 
+        $this->response->status=true;
 
-        $this->accept->status=true;
         $this->host!==null?
-            $this->host:
-            $this->accept->host=$this->config->host;
+            $this->response->host=$this->host:
+            $this->response->host=$this->config->host;
         if($this->atParse!==null?$this->atParse:$this->config->atParse)
+
             $this->parseIt();
 
         $this->logOutput();
+        $this->response->config=$this->config;
     }
 
     public function logOutput(){
 
         if($this->isLog!==null?$this->isLog:$this->config->isLog){
-            commonLog($this->logFile!==null?$this->logFile:$this->config->logFile,$this->accept);
+            commonLog($this->logFile!==null?$this->logFile:$this->config->logFile,$this->response);
         }
-
 
     }
 

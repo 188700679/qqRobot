@@ -10,7 +10,7 @@ namespace QQRobot;
 
 interface SendInterface{
 
-    public function send($args);
+    public function send($args,$server);
 
     public function addObserver($observer);
 }
