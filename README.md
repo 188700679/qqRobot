@@ -37,6 +37,8 @@ composer require 269995848/qqrobot dev-master
 
 9.默认异步发送
 
+10.智能对话,图片检黄(内置组件)
+
 
 # HOW TO DO IT
 
