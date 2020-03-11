@@ -202,8 +202,6 @@ class Client extends ClientDefinition{
      * user:木鱼  2020/3/8 12:28
      */
     public function __call($name,$args){
-
-
         $this->server->args=(object)$args;
         $this->msgParse();
 

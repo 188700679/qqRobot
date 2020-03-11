@@ -24,7 +24,7 @@ class Join implements ResolutionObserver{
 
 
         //以加群
-        if(isset($event->notice_type) && ($event->user_id!=QQRobotConst::SELF_QQ)){
+        if(isset($event->notice_type) && ($event->user_id!=$event->self_id)){
             return $this->hasJoin($event);
         }
     }
@@ -44,6 +44,7 @@ EOT;
                     return
                         ['msg'=>$msg];
                 });
+                exit(__CLASS__."结束,不需要往下执行了");
             }
         }
 
@@ -51,7 +52,10 @@ EOT;
     }
 
     private function hasJoin($event){
-        if($event->sub_type==QQRobotConst::APPROVE && ($event->notice_type==QQRobotConst::GROUP_INCREASE)){
+        if(isset($event->sub_type)
+            && $event->sub_type==QQRobotConst::APPROVE
+            && isset($event->notice_type)
+            && ($event->notice_type==QQRobotConst::GROUP_INCREASE)){
 
 
             $client=new Client();
@@ -74,7 +78,7 @@ EOT;
 求好心人start+++!!!!我每天都在自我更新.........
 
 本群创建于:$create_time;
-共有:$admin_count 名管理猿;
+共有:$admin_count 名管理猿;   
 基佬:$mans 名;
 妹子?那是一个都没有
 祝(huan)你(ying)玩(kai)得(che)开心!
@@ -84,8 +88,9 @@ EOT;
             $client->on('back',function()use($msg){
 
                 return
-                    ['msg'=>$msg,'at'=>'at','emoji'=>128071,'img'=>'guy.png'];
+                    ['msg'=>$msg,'emoji'=>128071,'at'=>'at','img'=>'guy.png'];
             });
+            exit(__CLASS__."结束,不需要往下执行了");
 
         }
     }

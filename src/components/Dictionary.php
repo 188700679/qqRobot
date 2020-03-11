@@ -26,7 +26,7 @@ class Dictionary{
 
     public static function fuck(){
         $fuck=[
-            "sb","傻逼","cnm","弱智","智障","SB","狗东西","日你妈","操你妈","操尼玛","草你妈","贱人","爬","逗逼"
+            "sb","傻逼","cnm","弱智","智障","SB","狗东西","日你妈","操你妈","操尼玛","草你妈","贱人","爬","逗逼","去死"
         ];
 
         return $fuck;
@@ -66,6 +66,14 @@ class Dictionary{
         ];
         return $returnFuck[array_rand($returnFuck)];
 
+    }
+
+    public static function job(){
+        $job=[
+            "找工作",'招聘','招人'
+        ];
+
+        return $job;
     }
 
 

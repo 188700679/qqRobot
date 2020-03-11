@@ -18,7 +18,9 @@ class Leave implements ResolutionObserver{
         //自己离群
         if(isset($event->notice_type)){
 
-            if($event->user_id!=QQRobotConst::SELF_QQ
+            if($event->user_id!=$event->self_id
+                &&
+                isset($event->sub_type)
                 &&
                 ($event->sub_type==QQRobotConst::LEAVE)
                 &&
@@ -33,11 +35,11 @@ EOT;
                         ['msg'=>$msg,'emoji'=>$emoji];
 
                 });
+                exit(__CLASS__."结束,不需要往下执行了");
 
             }
         }
-
-
+        return null;
     }
 
 

@@ -24,6 +24,7 @@ class MessageSender{
      */
     public function sendOn($message){
 
+
         if($message->toGroup){
             if($message->async){
                 return $this->cq->sendGroupMsgAsync($message->id, $message->msg);

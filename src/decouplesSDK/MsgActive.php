@@ -8,8 +8,6 @@
 namespace QQRobot\decouplesSDK;
 
 
-use QQRobot\lib\CQA;
-use QQRobot\lib\MessageConstruct;
 use QQRobot\lib\MessageSender;
 
 class MsgActive extends Implementor{ // 具体化角色A
@@ -21,7 +19,7 @@ class MsgActive extends Implementor{ // 具体化角色A
 
     public function __construct($server,$args){
 
-       $this->server=$server;
+        $this->server=$server;
         $this->args=$args;
     }
 

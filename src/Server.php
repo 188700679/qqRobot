@@ -127,7 +127,7 @@ class Server extends ServerDefinition{
             'cookies'       =>false,
             'httpOrS'       =>true,
             'proxyQQ'       =>'',
-            'host'          =>'172.19.190.207:5700',
+            'host'          =>'127.0.0.1:5700',
             'isLog'         =>true,
             'listenQQRobot' =>true,
             'token'         =>'',
@@ -204,7 +204,6 @@ class Server extends ServerDefinition{
     /**
      * @return mixed|void
      * user:木鱼  2019/12/25 2:19
-     *
      */
     public function returnMessage(){}
 

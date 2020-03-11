@@ -42,4 +42,9 @@ class ParamsWrongException extends TransferException{
         commonLog('',$str);
         trigger_error($str,E_USER_DEPRECATED);
     }
+
+    public function aiParamsWrong(){
+
+        trigger_error('qqAi调用时缺少参数!',E_USER_WARNING);
+    }
 }

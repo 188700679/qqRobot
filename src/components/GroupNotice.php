@@ -31,10 +31,11 @@ class GroupNotice implements ResolutionObserver{
                 return
                     ['msg'=>$msg,'emoji'=>$emoji];
             });
+            exit(__CLASS__."结束,不需要往下执行了");
         }
 
 
-
+        return null;
 
 
     }
@@ -59,7 +60,7 @@ class GroupNotice implements ResolutionObserver{
 
     private function addAdmin($event){
 
-        if($event->user_id==QQRobotConst::SELF_QQ){
+        if($event->user_id==$event->self_id){
             return '我在本群荣生为管理员,快来恭喜我吧!  '.date('H:i:s',$event->time).'  ';
         }else{
             return "恭喜  $event->user_id 晋升管理员,酸啊! ".date('H:i:s',$event->time);
@@ -69,7 +70,7 @@ class GroupNotice implements ResolutionObserver{
 
     private function unsetAdmin($event){
 
-        if($event->user_id==QQRobotConst::SELF_QQ){
+        if($event->user_id==$event->self_id){
             return '我擦,你竟然下了我的管理员,明早三点我们学校门口决一死战吧!臭弟弟   '.date('H:i:s',$event->time);
         }else{
             return "哦豁  $event->user_id 的管理员职位被下了,喜大普奔啊 ".date('H:i:s',$event->time)  ;

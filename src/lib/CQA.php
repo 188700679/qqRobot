@@ -31,12 +31,12 @@ class CQA implements Definition{
     }
 
     public function sendPrivateMsgAsync($user_id, $message, $auto_escape = true){
+
         $api = Definition::send_private_msg_async;
         $param = [
             'user_id' => $user_id,
             'message' => $message,
-            'auto_escape' => $auto_escape,
-            'is_raw' => $auto_escape,
+            'auto_escape' => true,
         ];
         return $this->query($api, $param);
     }
@@ -60,6 +60,16 @@ class CQA implements Definition{
         return $this->query($api, $param);
     }
 
+    public function setFriendAddRequest($flag, $approve = true, $remark = ''){
+        $api = Definition::set_friend_add_request;
+        $param = [
+            'flag' => $flag,
+            'approve' => $approve,
+            'remark' => $remark,
+        ];
+        return $this->query($api, $param);
+    }
+
     public function sendGroupMsgAsync($group_id, $message, $auto_escape = false){
 
         $api = Definition::send_group_msg_async."_rate_limited";
@@ -79,7 +89,7 @@ class CQA implements Definition{
             $queryStr.= ($key.'='.urlencode(is_bool($value)?((int)$value):$value).'&');
         }
 
-        //halt('http://'.$this->host.$api.$queryStr);
+
         $result = json_decode(file_get_contents('http://'.$this->host.$api.$queryStr));
 
 

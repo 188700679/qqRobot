@@ -21,4 +21,6 @@ interface Definition{
     public const set_group_add_request = '/set_group_add_request';
     public const get_group_info = '/_get_group_info';
 
+    public const set_friend_add_request = '/set_friend_add_request';
+
 }

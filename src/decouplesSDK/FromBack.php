@@ -14,8 +14,6 @@ use QQRobot\lib\SendMessageEvent;
 
 class FromBack extends Implementor{ // 具体化角色A
 
-
-
     private $args;
 
     private $server;
