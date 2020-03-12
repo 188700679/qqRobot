@@ -1,7 +1,7 @@
 
 QQRobot是一个轻量级,高扩展的QQ机器人的php开源库,
 
-原先的github被封了,实践代码在:
+原先的github被封了,实践代码在:https://github.com/188700679/tp5_qqrobot
 
 欢迎加Q群:597755927
 

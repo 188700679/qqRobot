@@ -14,7 +14,7 @@ class CQA implements Definition{
     private $host;
     private $token;
 
-    public function __construct(string $host = '127.0.0.1:5700',string $token = ''){
+    public function __construct(string $host = '0.0.0.0:5700',string $token = ''){
         $this->host = $host;
         $this->token = $token;
     }

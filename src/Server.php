@@ -127,7 +127,7 @@ class Server extends ServerDefinition{
             'cookies'       =>false,
             'httpOrS'       =>true,
             'proxyQQ'       =>'',
-            'host'          =>'127.0.0.1:5700',
+            'host'          =>'0.0.0.0:5700',
             'isLog'         =>true,
             'listenQQRobot' =>true,
             'token'         =>'',

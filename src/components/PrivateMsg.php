@@ -52,7 +52,7 @@ class PrivateMsg implements ResolutionObserver{
 
         //回复好友
         if(isset($event->post_type) && $event->post_type=='message'){
-            $msg="你好,我是代管的笨笨机器人,作者马上将简历发送给您,\r看到消息会在第一时间回复您\r或者您也可以点击http://139.224.101.36:81/糜羽-php.doc\r谢谢!";
+            $msg="你好,我是代管的笨笨机器人,作者马上将简历发送给您,\r看到消息会在第一时间回复您\r或者您也可以点击http://139.224.101.36:81/meiyu+php.pdf\r谢谢!";
 
             $client=new Client($event);
             $client->on('back',function()use($msg){

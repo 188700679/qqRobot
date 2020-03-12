@@ -69,52 +69,53 @@ class ListenChar implements ResolutionObserver{
 
 
         //该方法不支持并发
-        if(preg_match("/^[\x{4e00}-\x{9fa5}]+/u",$event->message,$chinese)){
-            $this->textPolar($event,$chinese[0]);
-        }
+//        if(preg_match("/^[\x{4e00}-\x{9fa5}]+/u",$event->message,$chinese)){
+//            $this->textPolar($event,$chinese[0]);
+//        }
 
         return null;
 
     }
 
-    private function textPolar($event,$sendMsg){
-        $msg='';
-        $appkey = $this->aiApiKey;
-        $params = array(
-            'app_id'     => $this->aiApiID,
-            'nonce_str'  => strval(rand()),
-            'time_stamp'       => strval(time()),
-            'text'       => $sendMsg,
-        );
-        $params['sign'] = getReqSign($params, $appkey);
-
-        // 执行API调用
-        $res=json_decode(doHttpPost($this->baseApi, $params));
-
-        //commonLog('',json_encode($res));
-
-        switch($res->ret){
-            case 0:
-                if($res->data->polar=='-1'){
-                    $msg='你好像心情不太好,如果是这样,可以来找我倾述,我会一直陪着你,记得要@我哦!';
-                }
-
-            break;
-
-
-        }
-
-        if($msg){
-            $client=new Client($event);
-
-            $client->on('back',function()use($msg){
-                $emoji=rand(128512,128588);;
-                return
-                    ['msg'=>$msg,'emoji'=>$emoji,'at'=>'at'];
-            });
-
-        }
-    }
+    //情感分析
+//    private function textPolar($event,$sendMsg){
+//        $msg='';
+//        $appkey = $this->aiApiKey;
+//        $params = array(
+//            'app_id'     => $this->aiApiID,
+//            'nonce_str'  => strval(rand()),
+//            'time_stamp'       => strval(time()),
+//            'text'       => $sendMsg,
+//        );
+//        $params['sign'] = getReqSign($params, $appkey);
+//
+//        // 执行API调用
+//        $res=json_decode(doHttpPost($this->baseApi, $params));
+//
+//        commonLog('',json_encode($res));
+//
+//        switch($res->ret){
+//            case 0:
+//                if($res->data->polar=='-1'){
+//                    $msg='你好像心情不太好,如果是这样,可以来找我倾述,我会一直陪着你,记得要@我哦!';
+//                }
+//
+//            break;
+//
+//
+//        }
+//
+//        if($msg){
+//            $client=new Client($event);
+//
+//            $client->on('back',function()use($msg){
+//                $emoji=rand(128512,128588);;
+//                return
+//                    ['msg'=>$msg,'emoji'=>$emoji,'at'=>'at'];
+//            });
+//
+//        }
+//    }
 
 
 
