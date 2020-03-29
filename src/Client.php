@@ -268,7 +268,6 @@ class Client extends ClientDefinition{
     }
 
 
-
     public function messageSender($args,$server){
         if(empty($args)){
             return null;

@@ -18,9 +18,9 @@ class QQRobotConst{
 
     public  const GROUP_DECREASE='group_decrease';//离群提示
 
-    public const SELF_QQ='2442459484';
+    public const SELF_QQ='2442459484'; //可以自行修改
 
-    public const MASTER_QQ='1079019389';
+    public const MASTER_QQ='1079019389';//可以自行修改
 
     public const IMG_FILE='/root/coolq/data/image/';
 
