@@ -1,7 +1,7 @@
 
 QQRobot是一个轻量级,高扩展的QQ机器人的php开源库,
 
-原先的github被封了,实践代码在:https://github.com/188700679/tp5_qqrobot
+原先的github被封了,
 
 欢迎加Q群:597755927
 
@@ -10,7 +10,14 @@ QQRobot是一个轻量级,高扩展的QQ机器人的php开源库,
 ===============
 
 > php的运行环境要求PHP7+。
-> 他依赖coolq,如果你不熟悉coolq，我提供了快捷安装
+
+
+
+> 他依赖coolq,如果你不熟悉coolq，我提供了[快捷安装](https://github.com/188700679/yjscript/blob/master/coolq%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.txt)
+
+> 个人[实践代码](https://github.com/188700679/tp5_qqrobot)
+
+> qqRobot的权限依赖QQ的权限，尽量你的qq机器人在群内或是其他地方有最高权限（管理员），避免某些群管理功能失效
 
 # 安装
 ~~~
@@ -37,7 +44,7 @@ composer require 269995848/qqrobot dev-master
 
 9.默认异步发送
 
-10.智能对话,图片检黄(内置组件)
+10.智能对话,图片检黄(内置组件)//图片检黄组件剔除，因为并发性太低了
 
 11.事件监听
 
