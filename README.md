@@ -222,7 +222,7 @@ $client->on('msg',function(){
 ![Image text](http://139.224.101.36:81/zfb.png)
 
 
-感谢：
+感谢捐赠者：
 消逝，随心所欲，`andYes，忧愁的程序员，大致*如此，人生搬砖工
 
 
